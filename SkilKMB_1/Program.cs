@@ -87,43 +87,46 @@ namespace SkilKMB_1
 
         static void Third()
         {
+       
 
-            double a = 0;
-            double b = 0;
-            double aa = 0; //значение a в прошлой итерации
-            double bb = 0;//значение b в прошлой итерации
-            double eps = 1.1;
-
-
-            Console.WriteLine("Введите X:");
-            int x = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите Y:");
-            int y = Convert.ToInt32(Console.ReadLine());
-            a = x;
-            b = y;
-
-            a = 0.5 * ((a - 1) + (b - 1));   //A1
-            b = Math.Sqrt((a - 1) * (b - 1));  //B1
-
-            double min = Math.Abs(a - b);
+                double a = 0;
+                double b = 0;
+                double aa = 0; //значение a в прошлой итерации
+                double bb = 0;//значение b в прошлой итерации
+                double eps = 0.0001;
 
 
+                Console.WriteLine("Введите X:");
+                int x = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Введите Y:");
+                int y = Convert.ToInt32(Console.ReadLine());
+                a = x;
+                b = y;
+
+                a = 0.5 * ((a - 1) + (b - 1));   //A1
+                b = Math.Sqrt((a - 1) * (b - 1));  //B1
+
+                double min = Math.Abs(a - b);
 
 
-            while (min > eps)
-            {
-
-                aa = 0.5 * (a + b);
-                bb = Math.Sqrt(a * b);
-                a += 0.5 * (aa + bb);   //A1
-                b += Math.Sqrt(aa * bb);  //B1
-                min = Math.Abs(a - b);
-
-            }
-            Console.WriteLine(a);
-            Console.WriteLine(b);
 
 
+                while (min > eps)
+                {
+
+                    aa = 0.5 * (a + b);
+                    bb = Math.Sqrt(a * b);
+                    a += 0.5 * (aa + bb);   //A1
+                    b += Math.Sqrt(aa * bb);  //B1
+                    min = Math.Abs(a - b);
+
+                }
+                Console.WriteLine(a);
+                Console.WriteLine(b);
+
+
+
+            
 
         }
 
@@ -132,7 +135,10 @@ namespace SkilKMB_1
             // First(); // Первое задание
             //  Second(); // Второе задание вариант 20 но 20-нет поэтому вариант 10
 
-            Third(); // 3 задание 10 вариант
+            //Third(); // 3 задание 10 вариант
+
+            Console.ReadKey();
+
         }
     }
 }
