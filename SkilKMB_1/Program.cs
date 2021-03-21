@@ -12,20 +12,17 @@ namespace SkilKMB_1
       static  public void First()
         {
 
+            int n = 0;
+            double S = 0;
+
             Console.WriteLine("Введите число X");
             int X = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Введите точность");
             double eps = Convert.ToDouble(Console.ReadLine());
 
-            
-
-            double S = 0;
-
-            int n = 0;
-
             double an = (Math.Pow((X - 1), n + 1)) / ((n + 1) * Math.Pow(X, n + 1));
-            //Console.WriteLine(an);
-            eps = 0.0001;
+
             while (Math.Abs(an) >= eps)
             {
                 S += (Math.Pow((X - 1), n + 1)) / ((n + 1) * Math.Pow(X, n + 1));
@@ -37,9 +34,6 @@ namespace SkilKMB_1
 
             Console.WriteLine(S);
 
-
-
-
         }
 
 
@@ -47,9 +41,13 @@ namespace SkilKMB_1
 
         static public void Second()
         {
-
+            double S = 0; // сумма ряда
+            int n = 0;// итерации
             Console.WriteLine("Введите точность например [0,0001] ");
             double eps = Convert.ToDouble(Console.ReadLine());  //точность 
+
+            Console.WriteLine(eps);
+
 
             if (eps > 0.1)
             {
@@ -57,10 +55,9 @@ namespace SkilKMB_1
             }
             else
             {
-                double S = 0; // сумма ряда
-                int n = 0;// итерации
+              
                 double an = an = (1) / Math.Pow(((2 * n) + 1), 2); // Модуль этого значения будет сравниваться с точностью 
-                eps = 0.00001;  //точность 
+                
                 while (Math.Abs(an) >= eps)
                 {
                     an = (1) / Math.Pow(((2 * n) + 1), 2);
@@ -93,22 +90,25 @@ namespace SkilKMB_1
                 double b = 0;
                 double aa = 0; //значение a в прошлой итерации
                 double bb = 0;//значение b в прошлой итерации
-                double eps = 0.0001;
+              
 
 
                 Console.WriteLine("Введите X:");
                 int x = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите Y:");
                 int y = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите точность");
+            double eps = Convert.ToDouble(Console.ReadLine());
+            double min = Math.Abs(a - b);
+
                 a = x;
                 b = y;
 
                 a = 0.5 * ((a - 1) + (b - 1));   //A1
                 b = Math.Sqrt((a - 1) * (b - 1));  //B1
 
-                double min = Math.Abs(a - b);
-
-
+              
+          
 
 
                 while (min > eps)
@@ -130,12 +130,21 @@ namespace SkilKMB_1
 
         }
 
+
+        
+       
+
+
         static void Main(string[] args)
+        
         {
-            // First(); // Первое задание
+
+           // First(); // Первое задание
             //  Second(); // Второе задание вариант 20 но 20-нет поэтому вариант 10
 
-            //Third(); // 3 задание 10 вариант
+           Third(); // 3 задание 10 вариант
+
+           
 
             Console.ReadKey();
 
