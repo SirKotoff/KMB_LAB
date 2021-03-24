@@ -74,10 +74,6 @@ namespace SkilKMB_1
             }
 
 
-
-
-
-
         }
 
 
@@ -97,19 +93,15 @@ namespace SkilKMB_1
                 int x = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите Y:");
                 int y = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите точность");
-            double eps = Convert.ToDouble(Console.ReadLine());
-            double min = Math.Abs(a - b);
+                Console.WriteLine("Введите точность");
+                double eps = Convert.ToDouble(Console.ReadLine());
+                double min = Math.Abs(a - b);
 
                 a = x;
                 b = y;
 
                 a = 0.5 * ((a - 1) + (b - 1));   //A1
                 b = Math.Sqrt((a - 1) * (b - 1));  //B1
-
-              
-          
-
 
                 while (min > eps)
                 {
@@ -121,32 +113,23 @@ namespace SkilKMB_1
                     min = Math.Abs(a - b);
 
                 }
-                Console.WriteLine(a);
-                Console.WriteLine(b);
-
-
-
-            
+                    Console.WriteLine(a);
+                    Console.WriteLine(b);
 
         }
 
-
-        
-       
+     
 
 
         static void Main(string[] args)
         
         {
 
-           // First(); // Первое задание
-            //  Second(); // Второе задание вариант 20 но 20-нет поэтому вариант 10
-
+           First(); // Первое задание
+           Second(); // Второе задание вариант 20 но 20-нет поэтому вариант 10
            Third(); // 3 задание 10 вариант
 
-           
-
-            Console.ReadKey();
+           Console.ReadKey();
 
         }
     }
